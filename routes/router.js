@@ -15,6 +15,14 @@ module.exports = function(app) {
     Burger.insertOneBurger(req.body.burger_name);
   });
 
+  //Devour Burger
+  app.put("/put-burger", (req, res) => {
+    let id = parseInt(req.body.burger_id);
+    //console.log(req.body);
+    console.log("Burger ID: " + id);
+    Burger.updateOneBurger(id);
+  });
+
 }
 
 

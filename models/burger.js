@@ -7,7 +7,7 @@ module.exports = {
   insertOneBurger: function(burger_name){
     orm.insertOne(`burgers`, `burger_name`, burger_name);
   },
-  updateOneBurger: function(id, devoured){
-    orm.updateOne(`burgers`, `devoured`, devoured, `id`, id);
+  updateOneBurger: function(id){
+    orm.updateOne(`burgers`, `devoured`, 1, `id`, id);
   }
 }

@@ -1,6 +1,3 @@
-//selectAll()
-//insertOne()
-//updateOne()
 const connection = require('./connection.js');
 
 module.exports = {
@@ -19,7 +16,8 @@ module.exports = {
     });
   },
   updateOne: function(table_name, column, value, id_column, id){
-    connection.query('UPDATE ?? SET ? = ? WHERE condition ? = ?', [table_name,column,value,id_column,id], (err, rows) => {
+    //UPDATE `burgers` SET `devoured` = 1 WHERE `id` = 1;
+    connection.query('UPDATE ?? SET ? = ? WHERE ? = ?', [table_name,column,value,id_column,id], (err, rows) => {
       if (err) throw err;
       console.log("Sucessfully updated value.");
     });
