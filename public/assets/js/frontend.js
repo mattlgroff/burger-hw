@@ -48,7 +48,6 @@ function submitBurger(name){
 
 function devourBurger(id){
   const currentURL = window.location.origin;
-
   console.log("Burger ID in Frontend: " + id);
 
   let updateBurger = {

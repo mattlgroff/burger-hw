@@ -5,7 +5,7 @@ module.exports = {
     connection.query('SELECT * FROM ??', [table_name], (err, rows) => {
       if (err) throw err;
       if(type === "json") res.json(rows);
-      if(type === "render") res.render("all-burgers",{all:rows});
+      if(type === "render") res.render("index",{all:rows});
       console.log("Sent response.");
     });
   },

@@ -10,9 +10,12 @@ module.exports = function(app) {
   app.get("/api", Burger.selectAllBurgers);
 
   app.get("/all-burgers", BurgerController.allBurgers);
+  app.get("/", BurgerController.allBurgers);
+  app.get("/index.html", BurgerController.allBurgers);
 
   app.post("/post-burger", (req, res) => {
     Burger.insertOneBurger(req.body.burger_name);
+    res.send("Success.");
   });
 
   //Devour Burger
@@ -21,6 +24,7 @@ module.exports = function(app) {
     //console.log(req.body);
     console.log("Burger ID: " + id);
     Burger.updateOneBurger(id);
+    res.send("Success.");
   });
 
 }
