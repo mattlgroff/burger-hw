@@ -41,6 +41,11 @@ connection.connect(err => {
     return;
   }
   console.log("connected as id " + connection.threadId);
+
+  connection.query('CREATE TABLE IF NOT EXISTS `burgers`(`id` int auto_increment primary key not null,`burger_name` varchar(60) not null,`devoured` boolean not null default 0,`date` timestamp default current_timestamp)'), err => {
+    if(err) console.error(err);
+  }
+
 });
 
 
