@@ -20,15 +20,14 @@ const source = {
   // }
 };
 
-// we use source.[name of connection] to hook into mysql
-let connection = mysql.createConnection(source.localhost);
-
 if(process.env.JAWSDB_URL){
-  console.log("Using JAWSDB");
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
+  console.log("Using JAWSDB: " + process.env.JAWSDB_URL);
+  let connection = mysql.createConnection(process.env.JAWSDB_URL);
 }
 else{
   console.log("Using localhost");
+  // we use source.[name of connection] to hook into mysql
+let connection = mysql.createConnection(source.localhost);
 }
 
 connection.connect(err => {
